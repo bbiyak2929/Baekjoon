@@ -1,15 +1,15 @@
 import sys
 n = int(input())
 
-arr = [[] for _ in range(51)]
+arr = []
 for i in range(n):
-    a = input()
-    arr[len(a)].append(a)
+    a = str(sys.stdin.readline().strip())
+    arr.append(a)
 
-for i in arr:
-    if len(i) == 0:
-        pass
-    else:
-        temp = sorted(list(set(i)))
-        for j in temp:
-            print(j)
+set_ls = set(arr)
+ls = list(set_ls)
+ls.sort()
+ls.sort(key = len)
+
+for i in ls:
+    print(i)
